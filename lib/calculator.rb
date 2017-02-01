@@ -41,6 +41,15 @@ class Calculator
     end
   end
 
+  def divide(value)
+    div_val = value.to_i
+    if div_val != 0
+      self.result /= div_val
+    else
+      return 'Error'
+    end
+  end
+
 end
 
 # raise 'An error'

@@ -95,9 +95,19 @@ describe Calculator do
       expect(@my_calculator.divide('string')).to eq('Error')
     end
     it "should divide the value if x is valid" do
-      @my_calculator.reset(0)
-      @my_calculator.divide(0)
-      expect(@my_calculator.result).to eq(0)
+      @my_calculator.reset(8)
+      @my_calculator.divide(4)
+      expect(@my_calculator.result).to eq(2)
+    end
+    it "should say 'Error' if passed in value is 0" do
+      expect(@my_calculator.divide(0)).to eq('Error')
+    end
+  end
+
+  describe "Chain" do
+    it "should allow chaining and not return an error" do
+      @my_calculator.reset(1)
+      expect(@my_calculator.add(5).subtract(3).multiply(2).divide(3).to eq(2))
     end
   end
 end
