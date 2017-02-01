@@ -40,4 +40,17 @@ describe Calculator do
       expect(@my_calculator.result).to eq(2)
     end
   end
+
+  describe "Addition" do
+    it "should have a method add" do
+      expect(@my_calculator).to respond_to(:add)
+    end
+    it "should raise an error if x is not valid" do
+      expect(@my_calculator.add('string')).to raise_error
+    end
+    it "should add the value if x is valid" do
+      @my_calculator.add(10)
+      expect(@my_calculator.result).to be_a(Integer)
+    end
+  end
 end
