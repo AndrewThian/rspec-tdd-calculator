@@ -24,9 +24,18 @@ class Calculator
   end
 
   def sub(value)
-    add_val = value.to_i
-    if add_val != 0
-      self.result -= add_val
+    sub_val = value.to_i
+    if sub_val != 0
+      self.result -= sub_val
+    else
+      return 'Error'
+    end
+  end
+
+  def multiply(value)
+    mult_val = value.to_i
+    if mult_val != 0
+      self.result *= mult_val
     else
       return 'Error'
     end

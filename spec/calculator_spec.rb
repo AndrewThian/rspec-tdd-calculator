@@ -80,9 +80,23 @@ describe Calculator do
     it "should raise an error if x is not valid" do
       expect(@my_calculator.multiply('string')).to eq('Error')
     end
-    it "should subtract the value if x is valid" do
+    it "should multiply the value if x is valid" do
       @my_calculator.reset(0)
       @my_calculator.multiply(0)
+      expect(@my_calculator.result).to eq(0)
+    end
+  end
+
+  describe "Divide" do
+    it "should have a method divide" do
+      expect(@my_calculator).to respond_to(:divide)
+    end
+    it "should raise an error if x is not valid" do
+      expect(@my_calculator.divide('string')).to eq('Error')
+    end
+    it "should divide the value if x is valid" do
+      @my_calculator.reset(0)
+      @my_calculator.divide(0)
       expect(@my_calculator.result).to eq(0)
     end
   end
