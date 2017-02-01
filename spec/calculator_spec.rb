@@ -150,4 +150,17 @@ describe Calculator do
       expect(@my_calculator.result).to eq(10)
     end
   end
+
+  describe "Redo" do
+    it "should have a method operation" do
+      expect(@my_calculator).to respond_to(:redo)
+    end
+    it "should allow the undo method to execute properly" do
+      @my_calculator.redo
+      expect(@my_calculator.result).to eq(5)
+    end
+    it "should throw an error if there isnt a redo" do
+      expect(@my_calculator.redo).to eq("Error, nothing to redo")
+    end
+  end
 end
