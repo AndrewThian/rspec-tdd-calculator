@@ -4,6 +4,7 @@ require_relative '../lib/calculator'
 describe Calculator do
   before(:context) do
     # initialize calculator
+    @my_calculator = Calculator.new(1)
   end
 
   # Tests go here
