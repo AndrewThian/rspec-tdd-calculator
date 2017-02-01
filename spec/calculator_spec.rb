@@ -72,4 +72,18 @@ describe Calculator do
       expect(@my_calculator.result).to eq(9)
     end
   end
+
+  describe "Multiply" do
+    it "should have a method multiply" do
+      expect(@my_calculator).to respond_to(:multiply)
+    end
+    it "should raise an error if x is not valid" do
+      expect(@my_calculator.multiply('string')).to eq('Error')
+    end
+    it "should subtract the value if x is valid" do
+      @my_calculator.reset(0)
+      @my_calculator.multiply(0)
+      expect(@my_calculator.result).to eq(0)
+    end
+  end
 end
