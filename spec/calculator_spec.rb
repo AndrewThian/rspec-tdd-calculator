@@ -25,9 +25,19 @@ describe Calculator do
       @my_calculator.result = 2394 if respond_to? :result=
       expect(@my_calculator.result).to eq(1)
     end
+  end
 
-    describe "Reset should reset calculator to default value" do
-      it "should have a method reset" do
-        @my_calculator.should respond_to :reset(1)
-      end
+  describe "Reset" do
+    it "should have a method reset" do
+      expect(@my_calculator).to respond_to(:reset)
+    end
+    # checking for potato method
+    # it "should not respond to random method" do
+    #   expect(@my_calculator).to respond_to(:potato)
+    # end
+    it "should reset calculator" do
+      @my_calculator.reset(2)
+      expect(@my_calculator.result).to eq(2)
+    end
+  end
 end
