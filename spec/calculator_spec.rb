@@ -42,15 +42,34 @@ describe Calculator do
   end
 
   describe "Addition" do
-    it "should have a method add" do
+    it "should have a method sub" do
       expect(@my_calculator).to respond_to(:add)
     end
     it "should raise an error if x is not valid" do
-      expect(@my_calculator.add('string')).to raise_error
+      expect(@my_calculator.add('string')).to eq('Error')
     end
     it "should add the value if x is valid" do
       @my_calculator.add(10)
-      expect(@my_calculator.result).to be_a(Integer)
+      expect(@my_calculator.result).to eq(12)
+    end
+  end
+
+  describe "Subtraction" do
+    it "should have a method sub" do
+      expect(@my_calculator).to respond_to(:sub)
+    end
+    it "should raise an error if x is not valid" do
+      expect(@my_calculator.sub('string')).to eq('Error')
+    end
+    it "should subtract the value if x and return a negative number" do
+      @my_calculator.reset(0)
+      @my_calculator.sub(10)
+      expect(@my_calculator.result).to eq(-10)
+    end
+    it "should subtract the value if x and return a positive number" do
+      @my_calculator.reset(12)
+      @my_calculator.sub(3)
+      expect(@my_calculator.result).to eq(9)
     end
   end
 end

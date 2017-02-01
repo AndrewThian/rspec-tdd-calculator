@@ -9,7 +9,20 @@ class Calculator
     @result = cal_val
   end
 
+  # methods
   def reset(x)
     @result = x
   end
+
+  def add(value)
+    add_val = value.to_i
+    if add_val != 0
+      self.result += add_val
+    else
+      return 'Error'
+    end
+  end
+
 end
+
+# raise 'An error'
