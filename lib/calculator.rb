@@ -54,6 +54,21 @@ class Calculator
     self
   end
 
+  def operation(oper,value)
+    if value == nil
+      return 'Error, second argument'
+    end
+    case oper
+    when "add"
+      self.add(value)
+    when "sub"
+      self.sub(value)
+    when "multiply"
+      self.multiply(value)
+    when "divide"
+      self.divide(value)
+    end
+  end
 end
 
 # raise 'An error'

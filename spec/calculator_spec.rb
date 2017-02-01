@@ -116,8 +116,8 @@ describe Calculator do
       expect(@my_calculator).to respond_to(:operation)
     end
     it "should accept two arguments" do
-      @my_calculator.operation('add')
-      expect(@my_calculator).to eq('Error, second argument')
+      @my_calculator.reset(1)
+      expect(@my_calculator.operation('add', nil)).to eq('Error, second argument')
     end
     it "should accomplish add method based on string provided" do
       @my_calculator.reset(1)
