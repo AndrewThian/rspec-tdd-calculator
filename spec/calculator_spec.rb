@@ -107,7 +107,37 @@ describe Calculator do
   describe "Chain" do
     it "should allow chaining and not return an error" do
       @my_calculator.reset(1)
-      expect(@my_calculator.add(5).subtract(3).multiply(2).divide(3).to eq(2))
+      expect(@my_calculator.add(5).sub(3).multiply(2).divide(3).result).to eq(2)
+    end
+  end
+
+  describe "Operation" do
+    it "should have a method operation" do
+      expect(@my_calculator).to respond_to(:operation)
+    end
+    it "should accept two arguments" do
+      @my_calculator.operation('add')
+      expect(@my_calculator).to eq('Error, second argument')
+    end
+    it "should accomplish add method based on string provided" do
+      @my_calculator.reset(1)
+      @my_calculator.operation('add', 10)
+      expect(@my_calculator.result).to eq(11)
+    end
+    it "should accomplish sub method based on string provided" do
+      @my_calculator.reset(1)
+      @my_calculator.operation('sub', 10)
+      expect(@my_calculator.result).to eq(-9)
+    end
+    it "should accomplish multiply method based on string provided" do
+      @my_calculator.reset(1)
+      @my_calculator.operation('multiply', 10)
+      expect(@my_calculator.result).to eq(10)
+    end
+    it "should accomplish divide method based on string provided" do
+      @my_calculator.reset(10)
+      @my_calculator.operation('divide', 2)
+      expect(@my_calculator.result).to eq(5)
     end
   end
 end

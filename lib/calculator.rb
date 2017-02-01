@@ -21,6 +21,7 @@ class Calculator
     else
       return 'Error'
     end
+    self
   end
 
   def sub(value)
@@ -30,6 +31,7 @@ class Calculator
     else
       return 'Error'
     end
+    self
   end
 
   def multiply(value)
@@ -39,6 +41,7 @@ class Calculator
     else
       return 'Error'
     end
+    self
   end
 
   def divide(value)
@@ -48,6 +51,7 @@ class Calculator
     else
       return 'Error'
     end
+    self
   end
 
 end
