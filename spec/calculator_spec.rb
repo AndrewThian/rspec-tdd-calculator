@@ -140,4 +140,14 @@ describe Calculator do
       expect(@my_calculator.result).to eq(5)
     end
   end
+
+  describe "Undo" do
+    it "should have a method operation" do
+      expect(@my_calculator).to respond_to(:undo)
+    end
+    it "should allow the undo method to execute properly" do
+      @my_calculator.undo
+      expect(@my_calculator.result).to eq(10)
+    end
+  end
 end
