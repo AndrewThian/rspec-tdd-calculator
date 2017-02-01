@@ -16,4 +16,18 @@ describe Calculator do
       expect(@my_calculator.result).to eq(1)
     end
   end
+
+  describe "Reading result" do
+    it "would return the curent result" do
+      expect(@my_calculator.result).to eq(1)
+    end
+    it "result should only be read_only" do
+      @my_calculator.result = 2394 if respond_to? :result=
+      expect(@my_calculator.result).to eq(1)
+    end
+
+    describe "Reset should reset calculator to default value" do
+      it "should have a method reset" do
+        @my_calculator.should respond_to :reset(1)
+      end
 end
